@@ -1,6 +1,7 @@
 package br.com.zup.movieflix.moviedetail.viewmodel
 
 import android.util.Log
+import android.widget.Switch
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,12 +15,12 @@ class MovieDetailViewModel : ViewModel() {
     private var _response : MutableLiveData<MovieWithDirectorModel> = MutableLiveData()
     val response : LiveData<MovieWithDirectorModel> = _response
 
-    fun getMovieWithDirector(movie: Movie){
+    fun getMovieWithDirector(movie: Movie, flagSwitch: Boolean){
         try {
-            _response.value = repository.getMovieWithDirector(movie)
+            movie.favorite = flagSwitch
+            _response.value = repository.getMovieWithDirector(movie, flagSwitch)
         }catch (e:Exception){
             Log.e("Erro", e.message.toString())
         }
-
     }
 }
