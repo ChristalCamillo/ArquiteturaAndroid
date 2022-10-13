@@ -31,12 +31,14 @@ class MovieDetailActivity : AppCompatActivity() {
             binding.tvMovieSinopse.text = it.movie.sinopse
             binding.tvDirectorName.text = it.director.name
             binding.tvDirectorInfo.text = it.director.info
+
+            binding.swFavorite.isChecked = viewModel.getFavoriteMovie(it.movie)
+
+            binding.swFavorite.setOnCheckedChangeListener { _, isChecked ->
+                viewModel.favoriteMovie(it.movie, isChecked)
+            }
         }
-        viewModel.savedData.observe(this){
-        }
-        viewModel.savedDataFlag.observe(this){
-            binding.swFavorite.isChecked = it
-        }
+
     }
 
 
