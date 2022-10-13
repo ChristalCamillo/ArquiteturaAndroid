@@ -42,10 +42,10 @@ class MovieDetailViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
-    fun favoriteMovie (movie : Movie, flagSaveData:Boolean){
+    fun favoriteMovie (movie : Movie, flagSavedData:Boolean){
         try {
-            prefEditor.putBoolean(SAVED_MOVIE, flagSaveData)
-            if(flagSaveData){
+            prefEditor.putBoolean(SAVED_MOVIE, flagSavedData)
+            if(flagSavedData){
                 prefEditor.putString(MOVIE_NAME_KEY, movie.title)
                 prefEditor.putString(DIRECTOR_KEY, movie.director)
                 prefEditor.apply()

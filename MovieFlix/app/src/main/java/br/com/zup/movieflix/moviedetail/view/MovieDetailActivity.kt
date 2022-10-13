@@ -4,8 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import br.com.zup.movieflix.CHAVE_MOVIE
-import br.com.zup.movieflix.FAV_ISFALSE
-import br.com.zup.movieflix.FAV_ISTRUE
 import br.com.zup.movieflix.databinding.ActivityMovieDetailBinding
 import br.com.zup.movieflix.home.model.Movie
 import br.com.zup.movieflix.moviedetail.viewmodel.MovieDetailViewModel
