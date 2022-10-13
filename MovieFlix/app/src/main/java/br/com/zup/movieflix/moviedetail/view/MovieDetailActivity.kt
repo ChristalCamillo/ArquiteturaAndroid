@@ -24,7 +24,7 @@ class MovieDetailActivity : AppCompatActivity() {
     }
     private fun getPassedData(){
         val movie = intent.getParcelableExtra<Movie>(CHAVE_MOVIE)
-        movie?.let { viewModel.getMovieWithDirector(it, binding.swFav.isChecked) }
+        movie?.let { viewModel.getMovieWithDirector(it, binding.swFavorite.isChecked) }
     }
     private fun observable(){
         viewModel.response.observe(this){
@@ -35,9 +35,9 @@ class MovieDetailActivity : AppCompatActivity() {
             binding.tvDirectorInfo.text = it.director.info
 
             if(it.movie.favorite){
-                binding.tvFav.text = FAV_ISTRUE
+                binding.tvFavorite.text = FAV_ISTRUE
             }else{
-                binding.tvFav.text = FAV_ISFALSE
+                binding.tvFavorite.text = FAV_ISFALSE
             }
         }
     }
