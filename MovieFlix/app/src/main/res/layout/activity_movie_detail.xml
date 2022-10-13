@@ -76,13 +76,4 @@
         app:layout_constraintTop_toBottomOf="@id/tvDirectorInfo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/tvFavorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Este filme está favoritado"
-        app:layout_constraintTop_toBottomOf="@id/swFavorite"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,8 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class DirectorModel(
+data class DirectorWithFavoriteModel(
     var name: String,
-    var info: String
+    var info: String,
+    var favorite: Boolean = false
 ) : Parcelable

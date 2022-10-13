@@ -1,22 +1,20 @@
 package br.com.zup.movieflix.moviedetail.repository
 
-import android.widget.Switch
 import br.com.zup.movieflix.home.model.Movie
 import br.com.zup.movieflix.moviedetail.datasource.DirectorLocalDataSource
-import br.com.zup.movieflix.moviedetail.model.DirectorModel
-import br.com.zup.movieflix.moviedetail.model.MovieWithDirectorModel
+import br.com.zup.movieflix.moviedetail.model.DirectorWithFavoriteModel
+import br.com.zup.movieflix.moviedetail.model.MovieWithDirectorAndFavoritesModel
 
 class MovieDetailRepository (private val dataSource: DirectorLocalDataSource) {
 
-    fun getMovieWithDirector(movie: Movie, flagSwitch: Boolean) : MovieWithDirectorModel{
-        movie.favorite = flagSwitch
+    fun getMovieWithDirector(movie: Movie) : MovieWithDirectorAndFavoritesModel{
         val listaDeDiretores = dataSource.directorList
-        var diretor = DirectorModel("","")
+        var diretor = DirectorWithFavoriteModel("","")
         listaDeDiretores.forEach {
             if(it.name == movie.director){
                 diretor = it
             }
         }
-        return MovieWithDirectorModel(diretor,movie)
+        return MovieWithDirectorAndFavoritesModel(diretor,movie)
     }
 }
